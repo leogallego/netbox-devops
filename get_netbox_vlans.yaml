@@ -1,0 +1,8 @@
+---
+- name: Get Vlans From NetBox
+  connection: local
+  hosts: device_roles_access-switch
+  gather_facts: False
+
+  roles:
+    - role: get_netbox_vlans
