@@ -1,7 +1,7 @@
 ---
 - name: Get Vlans From NetBox
   connection: local
-  hosts: device_roles_access-switch
+  hosts: sites_container-lab
   gather_facts: False
 
   roles:
