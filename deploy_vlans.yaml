@@ -1,6 +1,6 @@
 ---
-- name: Get Vlans From NetBox
-  connection: local
+- name: Deploy VLANs From NetBox
+  connection: network_cli
   hosts: sites_container-lab
   gather_facts: False
 
