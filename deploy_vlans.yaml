@@ -5,4 +5,4 @@
   gather_facts: False
 
   roles:
-    - role: get_netbox_vlans
+    - role: deploy_vlans
