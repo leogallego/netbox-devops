@@ -1,4 +1,6 @@
+---
 plugin: netbox.netbox.nb_inventory
+api_endpoint: https://jhow6361.cloud.netboxapp.com/
 validate_certs: False
 group_by:
   - device_roles
