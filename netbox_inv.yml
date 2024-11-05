@@ -1,4 +1,5 @@
 plugin: netbox.netbox.nb_inventory
+enable_plugins=netbox
 validate_certs: False
 group_by:
   - device_roles
