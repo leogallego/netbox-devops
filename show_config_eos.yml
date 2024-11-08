@@ -1,0 +1,14 @@
+---
+- name: Show running configuration on Arista EOS device
+  hosts: ceos1
+  gather_facts: no
+
+  tasks:
+    - name: Retrieve running configuration
+      arista.eos.eos_command:
+        commands: ["show running-config"]
+      register: running_config
+
+    - name: Display running configuration
+      debug:
+        var: running_config.stdout_lines
