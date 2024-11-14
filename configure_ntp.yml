@@ -1,0 +1,14 @@
+---
+- name: Configure NTP on Arista devices using NetBox inventory config_context
+  hosts: arista_devices
+  gather_facts: no
+
+  tasks:
+    - name: Extract NTP servers from NetBox inventory config_context
+      set_fact:
+        ntp_servers: "{{ hostvars[inventory_hostname].config_context.ntp_servers | default([]) }}"
+
+    - name: Ensure NTP servers are configured on the device
+      arista.eos.eos_ntp_global:
+        servers: "{{ ntp_servers }}"
+        state: present
