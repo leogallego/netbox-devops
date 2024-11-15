@@ -1,0 +1,5 @@
+paramiko
+pytz
+pynetbox
+ansible
+ansible-pylibssh

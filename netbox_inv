@@ -2,5 +2,9 @@ plugin: netbox.netbox.nb_inventory
 config_context: true
 validate_certs: False
 group_by:
+  - platforms
   - device_roles
   - sites
+
+compose:
+ ansible_network_os: platform.name
