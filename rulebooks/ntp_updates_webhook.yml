@@ -8,12 +8,10 @@
 
   rules:
   - name: NTP Configuraton Updated
-    # condition:
-    #   all:
-    #     - event.payload.event == "updated"
-    #     - event.payload.data.name == "ntp_servers"
-
-    condition: event.payload.message == "Ansible is super cool!"
+    condition:
+      all:
+        - event.payload.event == "updated"
+        - event.payload.model == "configcontext"
 
     action:
       run_job_template:
