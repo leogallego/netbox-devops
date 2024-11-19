@@ -1,7 +1,7 @@
 ---
 - name: Configure NTP on network devices using NetBox inventory config_context
   connection: network_cli
-  hosts: device_roles_switch
+  hosts: sites_eda-testing
   gather_facts: no
   become: true
 
