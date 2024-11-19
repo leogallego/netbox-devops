@@ -3,13 +3,6 @@
   connection: network_cli
   hosts: sites_eda-testing
   gather_facts: no
-  become: true
-
-  vars:
-    ansible_user: admin
-    ansible_password: admin
-    ansible_become: yes
-    ansible_become_password: admin
 
   tasks:
     - name: Extract NTP servers from NetBox inventory config_context
