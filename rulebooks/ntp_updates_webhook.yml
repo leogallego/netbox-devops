@@ -8,8 +8,7 @@
 
   rules:
   - name: NTP Configuraton Updated
-    condition: # event.payload.model == "configcontext"
-
+    condition:
       all:
         - event.payload.event == "updated"
         - event.payload.model == "configcontext"
