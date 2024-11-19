@@ -1,7 +1,8 @@
 ---
 - name: Show running configuration on Arista EOS device
   connection: network_cli
-  hosts: device_roles_switch
+#  hosts: device_roles_switch
+  hosts: ceos1,ceos2,ceos3
   gather_facts: no
   become: true
 
