@@ -1,17 +1,9 @@
 ---
 - name: Show running configuration on Arista EOS device
   connection: network_cli
-#  hosts: device_roles_switch
   hosts: ceos1,ceos2,ceos3
   gather_facts: no
   become: true
-
-#   vars:
-#     ansible_user: admin
-#     ansible_password: admin
-#     ansible_become: yes
-#     ansible_become_password: admin
-#     ansible_network_os: arista.eos.eos
 
   tasks:
     - name: Retrieve running configuration
