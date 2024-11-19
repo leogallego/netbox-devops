@@ -7,4 +7,6 @@ group_by:
   - sites
 
 compose:
- ansible_network_os: platform.name
+  ansible_network_os: platform.name
+  ansible_host: custom_fields.host
+  ansible_port: custom_fields.port
