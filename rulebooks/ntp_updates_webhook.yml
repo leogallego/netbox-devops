@@ -8,7 +8,7 @@
 
   rules:
   - name: NTP Configuraton Updated
-    condition: event.payload.message == "Ansible is super cool!"
+    condition: event.payload.event == "updated"
 
   #     all:
   #       - event.payload.event == "updated"
