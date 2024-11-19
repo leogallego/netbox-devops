@@ -7,7 +7,7 @@
         port: 5000
 
   rules:
-  - name: NTP Configuraton Updated
+  - name: NTP Configuration Updated
     condition:
       all:
         - event.payload.event == "updated"
