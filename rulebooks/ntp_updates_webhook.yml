@@ -10,8 +10,11 @@
   - name: NTP Configuration Updated
     condition:
       all:
-        - event.payload.event == "updated"
-        - event.payload.model == "configcontext"
+        # - event.payload.event == "updated"
+        # - event.payload.model == "configcontext"
+
+        - event.payload.event == "job_ended"
+        - event.payload.model == "branch"
 
     action:
       run_job_template:
