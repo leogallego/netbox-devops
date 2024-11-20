@@ -11,9 +11,9 @@
     # condition: event.payload.event == "job_ended"
 
     condition: >-
-        event.event == "job_ended" and
-        event.model == "branch" and
-        "Applying change Extras | config context ntp_servers" in event.data.log
+        event.payload.event == "job_ended" and
+        event.payload.model == "branch" and
+        "Applying change Extras | config context ntp_servers" in event.payload.data.log
 
     action:
       run_job_template:
