@@ -8,10 +8,10 @@
 
   rules:
   - name: NTP Configuration Updated
-    condition:
-      all:
-        - event.payload.event == "job_ended"
-        - event.payload.model == "branch"
+    condition: event.payload.event == "job_ended"
+      # all:
+      #   - event.payload.event == "job_ended"
+      #   - event.payload.model == "branch"
 
     action:
       run_job_template:
