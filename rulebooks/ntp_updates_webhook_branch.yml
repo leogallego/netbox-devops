@@ -1,5 +1,5 @@
 ---
-- name: Listen for NTP Config Context updates from NetBox on a webhook
+- name: Listen for NTP Config Context updates from NetBox on a webhook when a branch is merged
   hosts: all
   sources:
     - ansible.eda.webhook:
@@ -10,8 +10,8 @@
   - name: NTP Configuration Updated
     condition:
       all:
-        - event.payload.event == "updated"
-        - event.payload.model == "configcontext"
+        - event.payload.event == "job_eneded"
+        - event.payload.model == "branch"
 
     action:
       run_job_template:
