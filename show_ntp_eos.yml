@@ -1,0 +1,16 @@
+---
+- name: Show NTP configuration on Arista EOS device
+  connection: network_cli
+  hosts: ceos1,ceos2,ceos3
+  gather_facts: no
+  become: true
+
+  tasks:
+    - name: Retrieve running configuration NTP section
+      arista.eos.eos_command:
+        commands: ["show running-config | section ntp"]
+      register: ntp_config
+
+    - name: Display running configuration
+      debug:
+        var: ntp_config.stdout_lines
