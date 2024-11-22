@@ -1,0 +1,27 @@
+---
+- name: Listen for Webhooks from NetBox
+  hosts: all
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 5000
+
+  rules:
+
+  # NTP
+  - name: NTP configuration updated in a merged branch
+    condition: event.payload.event == "job_ended" and event.payload.model == "branch" and event.payload.data.log is search("ntp_servers updated", ignorecase=true)
+
+    action:
+      run_job_template:
+        organization: "Default"
+        name: "Configure NTP Servers"
+
+  # VLAN
+    - name: VLAN Configuration updated in a merged branch
+      condition: event.payload.event == "job_ended" and event.payload.model == "branch" and event.payload.data.log is search("VLAN")
+
+     action:
+      run_job_template:
+        organization: "Default"
+        name: "Configure VLANs"
