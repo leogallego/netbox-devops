@@ -9,10 +9,6 @@
       set_fact:
         login_banner: "{{ hostvars[inventory_hostname].config_context[0].login_banner[0] | default([]) }}"
 
-    - name: Display Banner from NetBox
-      debug:
-        var: login_banner
-
     - name: Apply Login Banner configuration to Arista EOS devices
       when: ansible_network_os == 'arista.eos.eos'
       arista.eos.eos_banner:
