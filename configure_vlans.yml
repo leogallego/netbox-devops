@@ -1,7 +1,7 @@
 ---
 - name: Configure VLANS on network devices using NetBox data
   connection: network_cli
-  hosts: sites_eda
+  hosts: sites_eda-testng
   gather_facts: no
   vars:
     netbox_url: "{{ lookup('ansible.builtin.env', 'NETBOX_API') }}"
